@@ -49,7 +49,7 @@ public class SimulationGUI extends JFrame {
         store.doStep();
         steps.setText("ШАГ " + step);
 
-        int count = random.nextInt(10); //рандомное кол-во покупателей
+        int count = random.nextInt(10);
 
         for (int i = 0; i < count; i++) {
             Customer customer = new Customer(random);
@@ -136,13 +136,13 @@ public class SimulationGUI extends JFrame {
         button.addActionListener(e -> {
             if (timer.isRunning()) {
                 timer.stop();
-                button.setText("▶ СТАРТ");
+                button.setText("СТАРТ");
                 steps.setText("ПАУЗА на шаге " + step);
-                // Запускаем цепочку диалогов статистики
+
                 showStatisticsDialog();
             } else {
                 timer.start();
-                button.setText("⏸ ПАУЗА");
+                button.setText("ПАУЗА");
                 steps.setText("ШАГ " + step);
             }
         });
